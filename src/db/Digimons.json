@@ -2,6 +2,7 @@
     {
         "id": 1,
         "name": "Agumón",
+        "damage":500,
         "type": [
             { "name": "Vacuna", "strongAgainst": [], "weakAgainst": [] }
         ],
@@ -10,6 +11,16 @@
     {
         "id": 2,
         "name": "Gatomón",
+        "damage":200,
+        "type": [
+            { "name": "Vacuna", "strongAgainst": [], "weakAgainst": [] }
+        ],
+        "img": "https://vignette.wikia.nocookie.net/tu-digimon/images/e/e4/Gatomon.gif/revision/latest/scale-to-width-down/300?cb=20130127193244&path-prefix=es"
+    },
+    {
+        "id": 3,
+        "name": "Test",
+        "damage":1000,
         "type": [
             { "name": "Vacuna", "strongAgainst": [], "weakAgainst": [] }
         ],

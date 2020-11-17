@@ -40,12 +40,33 @@ export function getByType(req: Request, res: Response) {
 }
 
 
-export function getMore(req: Request, res: Response) {
+export function getMoreStrong(req: Request, res: Response) {
     try {
-        const type = req.params.type && req.params.type || undefined;
-        if(!type){ throw "Se requiere el Tipo del digimon."}
-        const digimons = DigimonsService.getByType(type);
-        res.status(200).json(digimons);
+        console.info("hi");
+        console.warn("wahappen");
+        const id1 = req.params.id.split(",")[0] && +req.params.id.split(",")[0] || undefined;
+        const id2 = req.params.id.split(",")[1] && +req.params.id.split(",")[1] || undefined;
+        let resp;
+        if(!id1 || !id2){ throw "Se requiere el ID del digimon."}
+        let digimons=[];
+        digimons.push(DigimonsService.get(id1));
+        digimons.push(DigimonsService.get(id2));
+        if (DigimonsService.get(id1).damage>DigimonsService.get(id2).damage) {
+            resp =
+            `
+            <h1>${DigimonsService.get(id1).name}(${DigimonsService.get(id1).damage}) VS ${DigimonsService.get(id2).name}(${DigimonsService.get(id2).damage})</h1>
+            <h3>Ganador: ${DigimonsService.get(id1).name}</h3>
+            `;
+        }else{
+            resp =
+            `
+            <h1>${DigimonsService.get(id1).name}(${DigimonsService.get(id1).damage}) VS ${DigimonsService.get(id2).name}(${DigimonsService.get(id2).damage})</h1>
+            <h3>Ganador: ${DigimonsService.get(id2).name}</h3>
+            `;
+        }
+        // const digimon = DigimonsService.get(id1);
+        // const digimon = DigimonsService.get(id2);
+        res.status(200).send(resp);
     } catch (error) {
         res.status(400).send(error);
     }
