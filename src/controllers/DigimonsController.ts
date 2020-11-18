@@ -42,8 +42,6 @@ export function getByType(req: Request, res: Response) {
 
 export function getMoreStrong(req: Request, res: Response) {
     try {
-        console.info("hi");
-        console.warn("wahappen");
         const id1 = req.params.id.split(",")[0] && +req.params.id.split(",")[0] || undefined;
         const id2 = req.params.id.split(",")[1] && +req.params.id.split(",")[1] || undefined;
         let resp;
@@ -67,6 +65,45 @@ export function getMoreStrong(req: Request, res: Response) {
         // const digimon = DigimonsService.get(id1);
         // const digimon = DigimonsService.get(id2);
         res.status(200).send(resp);
+    } catch (error) {
+        res.status(400).send(error);
+    }
+}
+
+export function saveDigimon(req: Request, res: Response) {
+    try {
+        // let digimon = req.params.id.split(",") && +req.params.id.split(",")[0] || "null"
+        console.log(req.params.digimon);
+       let separate:any = req.params.digimon.split(",")
+        let digimon = {
+           
+                id: "",
+                name: separate[0] || "null",
+                damage: separate[1] || "null",
+                type: [
+                    { "name": separate[2] || "null", "strongAgainst": [], "weakAgainst": [] }
+                ],
+                img: separate[3] || "null"
+            
+        }
+        
+
+        let gola=
+        {
+            "id": 2,
+            "name": "Gatomón",
+            "damage":200,
+            "type": [
+                { "name": "Vacuna", "strongAgainst": [], "weakAgainst": [] }
+            ],
+            "img": "https://vignette.wikia.nocookie.net/tu-digimon/images/e/e4/Gatomon.gif/revision/latest/scale-to-width-down/300?cb=20130127193244&path-prefix=es"
+        }
+
+
+        DigimonsService.saveDigimon(digimon);
+        console.log("json: ");
+        console.log(digimon);
+        res.status(200).json(digimon);
     } catch (error) {
         res.status(400).send(error);
     }
