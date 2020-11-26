@@ -2,37 +2,37 @@
 import { PokemonI } from "../interfaces/PokemonInterfaces";
 const db = require('../db/Pokemons.json');
 
-module DigimonsService { 
+module PokemonsService { 
     export function getAll(): Array<PokemonI> {
-        const digimons: Array<PokemonI> = db;
-        return digimons
+        const pokemons: Array<PokemonI> = db;
+        return pokemons
     }
     export function get(id: number): PokemonI {
-        const digimons: Array<PokemonI> = db;
-        const digimon: Array<PokemonI> = digimons.filter(e => e.id === id);
-        if (digimon.length < 1) {
-            throw "No se encontró el digimon"
+        const pokemons: Array<PokemonI> = db;
+        const pokemon: Array<PokemonI> = pokemons.filter(e => e.id === id);
+        if (pokemon.length < 1) {
+            throw "No se encontró el pokemon"
         }
-        return digimon[0];
+        return pokemon[0];
     }
     export function getByName(name: string): Array<PokemonI> {
-        const digimons: Array<PokemonI> = db;
-        const matches: Array<PokemonI> = digimons.filter(function(el) {
+        const pokemons: Array<PokemonI> = db;
+        const matches: Array<PokemonI> = pokemons.filter(function(el) {
             return el.name.toLowerCase().indexOf(name.toLowerCase()) > -1;
         })
         if (matches.length < 1) {
-            throw "No se encontró el digimon"
+            throw "No se encontró el pokemon"
         }
         return matches;
     }
     
     export function getByType(type: string): Array<PokemonI> {
-        const digimons: Array<PokemonI> = db;
+        const pokemons: Array<PokemonI> = db;
         let matches: Array<PokemonI> = [];
-        digimons.forEach(digimon => {
-            const found = digimon.type.filter(e => e.name === type);
+        pokemons.forEach(pokemon => {
+            const found = pokemon.type.filter(e => e.name === type);
             if (found.length>0) {
-                matches.push(digimon);
+                matches.push(pokemon);
             }
         })
          
@@ -42,12 +42,12 @@ module DigimonsService {
         return matches;
     }
     export function getMoreStrong(id: number): PokemonI {
-        const digimons: Array<PokemonI> = db;
-        const digimon: Array<PokemonI> = digimons.filter(e => e.id === id);
-        if (digimon.length < 1) {
-            throw "No se encontró el digimon"
+        const pokemons: Array<PokemonI> = db;
+        const pokemon: Array<PokemonI> = pokemons.filter(e => e.id === id);
+        if (pokemon.length < 1) {
+            throw "No se encontró el pokemon"
         }
-        return digimon[0];
+        return pokemon[0];
     }
 
     export function savePokemon(json: any) {
@@ -57,4 +57,4 @@ module DigimonsService {
     }
 }
 
-export default DigimonsService;
+export default PokemonsService;
