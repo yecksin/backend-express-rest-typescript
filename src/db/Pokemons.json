@@ -6,34 +6,34 @@
         "type": [
             { "name": "Planta", "strongAgainst": ["Veneno"], "weakAgainst": ["Fuego"] }
         ],
-        "img": "https://static.wikia.nocookie.net/espokemon/images/4/43/Bulbasaur.png/revision/latest?cb=20170120032346"
+        "img": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png"
     },
     {
         "id": 2,
         "name": "Charmander",
-        "damage":200,
+        "damage":600,
         "type": [
             { "name": "Fuego", "strongAgainst": ["Planta"], "weakAgainst": ["Agua"] }
         ],
-        "img": "https://static.wikia.nocookie.net/espokemon/images/5/56/Charmander.png/revision/latest?cb=20140207202456"
+        "img": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png"
     },
     {
         "id": 3,
-        "name": "",
+        "name": "Squirtle",
         "damage":1000,
         "type": [
-            { "name": "", "strongAgainst": [""], "weakAgainst": [""] }
+            { "name": "Agua", "strongAgainst": ["Fuego"], "weakAgainst": ["Planta"] }
         ],
-        "img": ""
+        "img": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png"
     }
     ,
     {
         "id": 4,
-        "name": "",
+        "name": "Pikachu",
         "damage":1500,
         "type": [
-            { "name": "", "strongAgainst": [""], "weakAgainst": [""] }
+            { "name": "Electrico", "strongAgainst": ["Planta"], "weakAgainst": ["Tierra"] }
         ],
-        "img": ""
+        "img": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png"
     }
 ]
