@@ -42,8 +42,9 @@ export function getByType(req: Request, res: Response) {
 
 export function getMoreStrong(req: Request, res: Response) {
     try {
-        const id1 = req.params.id.split(",")[0] && +req.params.id.split(",")[0] || undefined;
-        const id2 = req.params.id.split(",")[1] && +req.params.id.split(",")[1] || undefined;
+        // let resp = req.params.id1 +req.params.id2;
+        const id1 = req.params.id1 && +req.params.id1|| undefined;
+        const id2 = req.params.id2 && +req.params.id2 || undefined;
         let resp;
         if(!id1 || !id2){ throw "Se requiere el ID del digimon."}
         let digimons=[];
@@ -53,13 +54,17 @@ export function getMoreStrong(req: Request, res: Response) {
             resp =
             `
             <h1>${DigimonsService.get(id1).name}(${DigimonsService.get(id1).damage}) VS ${DigimonsService.get(id2).name}(${DigimonsService.get(id2).damage})</h1>
+            <img width="200"  src="${DigimonsService.get(id1).img}"> <img width="200"  src="${DigimonsService.get(id2).img}">
             <h3>Ganador: ${DigimonsService.get(id1).name}</h3>
+            <img width="200"  src="${DigimonsService.get(id1).img}">
             `;
         }else{
             resp =
             `
             <h1>${DigimonsService.get(id1).name}(${DigimonsService.get(id1).damage}) VS ${DigimonsService.get(id2).name}(${DigimonsService.get(id2).damage})</h1>
+            <img width="200"  src="${DigimonsService.get(id1).img}"> <img width="200"  src="${DigimonsService.get(id2).img}">
             <h3>Ganador: ${DigimonsService.get(id2).name}</h3>
+            <img width="200"  src="${DigimonsService.get(id2).img}">
             `;
         }
         // const digimon = DigimonsService.get(id1);

@@ -19,11 +19,21 @@
     },
     {
         "id": 3,
-        "name": "Test",
+        "name": "Babamon",
         "damage":1000,
         "type": [
             { "name": "Vacuna", "strongAgainst": [], "weakAgainst": [] }
         ],
-        "img": "https://vignette.wikia.nocookie.net/tu-digimon/images/e/e4/Gatomon.gif/revision/latest/scale-to-width-down/300?cb=20130127193244&path-prefix=es"
+        "img": "https://2img.net/h/wikimon.net/images/f/f2/Babamon_crusader.jpg"
+    }
+    ,
+    {
+        "id": 4,
+        "name": "Demon",
+        "damage":1500,
+        "type": [
+            { "name": "Vacuna", "strongAgainst": [], "weakAgainst": [] }
+        ],
+        "img": "https://wikimon.net/images/a/a4/Demon_beast2.jpg"
     }
 ]

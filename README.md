@@ -2,10 +2,10 @@
 ## Servicio para consultar por tipo
 ## Servicio para consultar si un digimón/pokemón es fuerte o débil contra otro
  Se comparan los digimón con sus id
- - Ejemplo 1: http://localhost:3000/digimons/strong/id1,id2
- - Ejemplo 2: http://localhost:3000/digimons/strong/5,1
+ - Orden de parametros de ruta: http://localhost:3000/digimons/strong/id1/id2
+ - Ejemplo 2: http://localhost:3000/digimons/strong/1/2
 ## Servicio para crear un nuevo digimon/pokemón (que estará creado en memoria, no debe persistir aún)
  /digimons/save/:digimon  
  Entran 4 parametros que se separan por (,)
- - Ejemplo 1: http://localhost:3000/digimons/save/name,damage,type,img
+ - Orden de parametros de ruta: http://localhost:3000/digimons/save/name/damage/type/img
  - Ejemplo 2: http://localhost:3000/digimons/save/Agumon,500,veneno,img
