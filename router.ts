@@ -16,7 +16,7 @@ router.get('/digimons/:id', DigimonsController.get);
 router.get('/digimons/name/:name', DigimonsController.getByName);
 router.get('/digimons/type/:type', DigimonsController.getByType);
 router.get('/digimons/strong/:id1/:id2', DigimonsController.getMoreStrong);
-router.get('/digimons/save/:digimon', DigimonsController.saveDigimon);
+router.get('/digimons/save/:name/:damage/:type/:strongAgainst/:weakAgainst/:img', DigimonsController.saveDigimon);
 
 router.post("/", (req, res) => {
     console.log("Cuerpo:", req.body);

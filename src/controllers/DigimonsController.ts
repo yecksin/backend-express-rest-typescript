@@ -78,33 +78,20 @@ export function getMoreStrong(req: Request, res: Response) {
 export function saveDigimon(req: Request, res: Response) {
     try {
         // let digimon = req.params.id.split(",") && +req.params.id.split(",")[0] || "null"
-        console.log(req.params.digimon);
-       let separate:any = req.params.digimon.split(",")
+        console.log(req.params);
+        console.log("json");
         let digimon = {
            
                 id: "",
-                name: separate[0] || "null",
-                damage: separate[1] || "null",
+                name: req.params.name|| "null",
+                damage: req.params.damage || "null",
                 type: [
-                    { "name": separate[2] || "null", "strongAgainst": [], "weakAgainst": [] }
+                    { "name": req.params.type|| "null", "strongAgainst": [req.params.strongAgainst], "weakAgainst": [req.params.weakAgainst] }
                 ],
-                img: separate[3] || "null"
+                img: req.params.img || "null"
             
         }
         
-
-        let gola=
-        {
-            "id": 2,
-            "name": "Gatomón",
-            "damage":200,
-            "type": [
-                { "name": "Vacuna", "strongAgainst": [], "weakAgainst": [] }
-            ],
-            "img": "https://vignette.wikia.nocookie.net/tu-digimon/images/e/e4/Gatomon.gif/revision/latest/scale-to-width-down/300?cb=20130127193244&path-prefix=es"
-        }
-
-
         DigimonsService.saveDigimon(digimon);
         console.log("json: ");
         console.log(digimon);

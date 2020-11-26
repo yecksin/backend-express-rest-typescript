@@ -4,7 +4,7 @@
         "name": "Agumón",
         "damage":500,
         "type": [
-            { "name": "Vacuna", "strongAgainst": [], "weakAgainst": [] }
+            { "name": "Vacuna", "strongAgainst": ["Fuego"], "weakAgainst": ["Virus"] }
         ],
         "img": "https://i.pinimg.com/564x/b9/2f/38/b92f3877ccd0ee9749269d5e72ad6832.jpg"
     },
@@ -13,7 +13,7 @@
         "name": "Gatomón",
         "damage":200,
         "type": [
-            { "name": "Vacuna", "strongAgainst": [], "weakAgainst": [] }
+            { "name": "Vacuna", "strongAgainst": ["Fuego"], "weakAgainst": ["Virus"] }
         ],
         "img": "https://vignette.wikia.nocookie.net/tu-digimon/images/e/e4/Gatomon.gif/revision/latest/scale-to-width-down/300?cb=20130127193244&path-prefix=es"
     },
@@ -22,7 +22,7 @@
         "name": "Babamon",
         "damage":1000,
         "type": [
-            { "name": "Vacuna", "strongAgainst": [], "weakAgainst": [] }
+            { "name": "Fuego", "strongAgainst": ["Virus"], "weakAgainst": ["Vacuna"] }
         ],
         "img": "https://2img.net/h/wikimon.net/images/f/f2/Babamon_crusader.jpg"
     }
@@ -32,7 +32,7 @@
         "name": "Demon",
         "damage":1500,
         "type": [
-            { "name": "Vacuna", "strongAgainst": [], "weakAgainst": [] }
+            { "name": "Virus", "strongAgainst": ["Vacuna"], "weakAgainst": ["Fuego"] }
         ],
         "img": "https://wikimon.net/images/a/a4/Demon_beast2.jpg"
     }
