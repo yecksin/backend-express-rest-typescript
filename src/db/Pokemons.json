@@ -1,0 +1,39 @@
+[
+    {
+        "id": 1,
+        "name": "Bulbasaur",
+        "damage":500,
+        "type": [
+            { "name": "Planta", "strongAgainst": ["Veneno"], "weakAgainst": ["Fuego"] }
+        ],
+        "img": "https://static.wikia.nocookie.net/espokemon/images/4/43/Bulbasaur.png/revision/latest?cb=20170120032346"
+    },
+    {
+        "id": 2,
+        "name": "Charmander",
+        "damage":200,
+        "type": [
+            { "name": "Fuego", "strongAgainst": ["Planta"], "weakAgainst": ["Agua"] }
+        ],
+        "img": "https://static.wikia.nocookie.net/espokemon/images/5/56/Charmander.png/revision/latest?cb=20140207202456"
+    },
+    {
+        "id": 3,
+        "name": "",
+        "damage":1000,
+        "type": [
+            { "name": "", "strongAgainst": [""], "weakAgainst": [""] }
+        ],
+        "img": ""
+    }
+    ,
+    {
+        "id": 4,
+        "name": "",
+        "damage":1500,
+        "type": [
+            { "name": "", "strongAgainst": [""], "weakAgainst": [""] }
+        ],
+        "img": ""
+    }
+]
