@@ -49,7 +49,7 @@ module DigimonsService {
         return digimon[0];
     }
 
-    export function saveDigimon(json: any) {
+    export function savePokemon(json: any) {
         console.log(db.length);
         json.id=db.length +1;
         db.push(json);

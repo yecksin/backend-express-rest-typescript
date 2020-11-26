@@ -24,7 +24,7 @@ router.get('/pokemons/:id', PokemonsController.get);
 router.get('/pokemons/name/:name', PokemonsController.getByName);
 router.get('/pokemons/type/:type', PokemonsController.getByType);
 router.get('/pokemons/strong/:id1/:id2', PokemonsController.getMoreStrong);
-router.get('/pokemons/save/:name/:damage/:type/:strongAgainst/:weakAgainst/:img', PokemonsController.saveDigimon);
+router.get('/pokemons/save/:name/:damage/:type/:strongAgainst/:weakAgainst/:img', PokemonsController.savePokemon);
 
 router.post("/", (req, res) => {
     console.log("Cuerpo:", req.body);

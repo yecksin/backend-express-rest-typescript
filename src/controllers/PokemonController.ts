@@ -75,7 +75,7 @@ export function getMoreStrong(req: Request, res: Response) {
     }
 }
 
-export function saveDigimon(req: Request, res: Response) {
+export function savePokemon(req: Request, res: Response) {
     try {
         // let digimon = req.params.id.split(",") && +req.params.id.split(",")[0] || "null"
         console.log(req.params);
@@ -92,7 +92,7 @@ export function saveDigimon(req: Request, res: Response) {
             
         }
         
-        PokemonsService.saveDigimon(digimon);
+        PokemonsService.savePokemon(digimon);
         console.log("json: ");
         console.log(digimon);
         res.status(200).json(digimon);
