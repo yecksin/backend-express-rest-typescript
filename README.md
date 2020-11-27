@@ -6,6 +6,6 @@
  - Ejemplo 2: http://localhost:3000/digimons/strong/1/2
 ## Servicio para crear un nuevo digimon/pokemón (que estará creado en memoria, no debe persistir aún)
  /digimons/save/:digimon  
- Entran 4 parametros que se separan por (,)
+ Entran 6 parametros que se separan por (/) despues del save
  - Orden de parametros de ruta: http://localhost:3000/digimons/save/:name/:damage/:type/:strongAgainst/:weakAgainst/:img
  - Ejemplo 2: http://localhost:3000/digimons/save/Agumon/500/Vacuna/Fuego/Virus/veneno.img
