@@ -27,16 +27,11 @@ module DigimonsService {
     
     export function getByType(type: string): Array<DigimonI> {
         const digimons: Array<DigimonI> = db;
-        let matches: Array<DigimonI> = [];
-        digimons.forEach(digimon => {
-            const found = digimon.type.filter(e => e.name === type);
-            if (found.length>0) {
-                matches.push(digimon);
-            }
+        const matches: Array<DigimonI> = digimons.filter(function(el) {
+            return el.type[0].name.toLowerCase().indexOf(type.toLowerCase()) > -1;
         })
-         
         if (matches.length < 1) {
-            throw "No se encontró el tipo"
+            throw "No se encontró el digimon"
         }
         return matches;
     }
