@@ -50,23 +50,33 @@ export function getMoreStrong(req: Request, res: Response) {
         let pokemons=[];
         pokemons.push(PokemonsService.get(id1));
         pokemons.push(PokemonsService.get(id2));
-        if (PokemonsService.get(id1).damage>PokemonsService.get(id2).damage) {
+        if (PokemonsService.get(id1).damage==PokemonsService.get(id2).damage) {
             resp =
             `
             <h1>${PokemonsService.get(id1).name}(${PokemonsService.get(id1).damage}) VS ${PokemonsService.get(id2).name}(${PokemonsService.get(id2).damage})</h1>
             <img width="200"  src="${PokemonsService.get(id1).img}"> <img width="200"  src="${PokemonsService.get(id2).img}">
-            <h3>Ganador: ${PokemonsService.get(id1).name}</h3>
-            <img width="200"  src="${PokemonsService.get(id1).img}">
+            <h3 style="color: red;">Empate</h3>
             `;
         }else{
-            resp =
-            `
-            <h1>${PokemonsService.get(id1).name}(${PokemonsService.get(id1).damage}) VS ${PokemonsService.get(id2).name}(${PokemonsService.get(id2).damage})</h1>
-            <img width="200"  src="${PokemonsService.get(id1).img}"> <img width="200"  src="${PokemonsService.get(id2).img}">
-            <h3>Ganador: ${PokemonsService.get(id2).name}</h3>
-            <img width="200"  src="${PokemonsService.get(id2).img}">
-            `;
+            if (PokemonsService.get(id1).damage>PokemonsService.get(id2).damage) {
+                resp =
+                `
+                <h1>${PokemonsService.get(id1).name}(${PokemonsService.get(id1).damage}) VS ${PokemonsService.get(id2).name}(${PokemonsService.get(id2).damage})</h1>
+                <img width="200"  src="${PokemonsService.get(id1).img}"> <img width="200"  src="${PokemonsService.get(id2).img}">
+                <h3 style="color: blue;">Ganador: ${PokemonsService.get(id1).name}</h3>
+                <img width="200"  src="${PokemonsService.get(id1).img}">
+                `;
+            }else{
+                resp =
+                `
+                <h1>${PokemonsService.get(id1).name}(${PokemonsService.get(id1).damage}) VS ${PokemonsService.get(id2).name}(${PokemonsService.get(id2).damage})</h1>
+                <img width="200"  src="${PokemonsService.get(id1).img}"> <img width="200"  src="${PokemonsService.get(id2).img}">
+                <h3 style="color: blue;">Ganador: ${PokemonsService.get(id2).name}</h3>
+                <img width="200"  src="${PokemonsService.get(id2).img}">
+                `;
+            }
         }
+
         // const pokemon = PokemonsService.get(id1);
         // const pokemon = PokemonsService.get(id2);
         res.status(200).send(resp);

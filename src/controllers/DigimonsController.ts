@@ -50,23 +50,34 @@ export function getMoreStrong(req: Request, res: Response) {
         let digimons=[];
         digimons.push(DigimonsService.get(id1));
         digimons.push(DigimonsService.get(id2));
-        if (DigimonsService.get(id1).damage>DigimonsService.get(id2).damage) {
+        if (DigimonsService.get(id1).damage==DigimonsService.get(id2).damage) {
             resp =
             `
             <h1>${DigimonsService.get(id1).name}(${DigimonsService.get(id1).damage}) VS ${DigimonsService.get(id2).name}(${DigimonsService.get(id2).damage})</h1>
             <img width="200"  src="${DigimonsService.get(id1).img}"> <img width="200"  src="${DigimonsService.get(id2).img}">
-            <h3>Ganador: ${DigimonsService.get(id1).name}</h3>
-            <img width="200"  src="${DigimonsService.get(id1).img}">
+            <h1 style="color: red;">Empate</h1>
+            
             `;
         }else{
-            resp =
-            `
-            <h1>${DigimonsService.get(id1).name}(${DigimonsService.get(id1).damage}) VS ${DigimonsService.get(id2).name}(${DigimonsService.get(id2).damage})</h1>
-            <img width="200"  src="${DigimonsService.get(id1).img}"> <img width="200"  src="${DigimonsService.get(id2).img}">
-            <h3>Ganador: ${DigimonsService.get(id2).name}</h3>
-            <img width="200"  src="${DigimonsService.get(id2).img}">
-            `;
+            if (DigimonsService.get(id1).damage>DigimonsService.get(id2).damage) {
+                resp =
+                `
+                <h1>${DigimonsService.get(id1).name}(${DigimonsService.get(id1).damage}) VS ${DigimonsService.get(id2).name}(${DigimonsService.get(id2).damage})</h1>
+                <img width="200"  src="${DigimonsService.get(id1).img}"> <img width="200"  src="${DigimonsService.get(id2).img}">
+                <h3 style="color: blue;">Ganador: ${DigimonsService.get(id1).name}</h3>
+                <img width="200"  src="${DigimonsService.get(id1).img}">
+                `;
+            }else{
+                resp =
+                `
+                <h1>${DigimonsService.get(id1).name}(${DigimonsService.get(id1).damage}) VS ${DigimonsService.get(id2).name}(${DigimonsService.get(id2).damage})</h1>
+                <img width="200"  src="${DigimonsService.get(id1).img}"> <img width="200"  src="${DigimonsService.get(id2).img}">
+                <h3 style="color: blue;">Ganador: ${DigimonsService.get(id2).name}</h3>
+                <img width="200"  src="${DigimonsService.get(id2).img}">
+                `;
+            }
         }
+
         // const digimon = DigimonsService.get(id1);
         // const digimon = DigimonsService.get(id2);
         res.status(200).send(resp);
